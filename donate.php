@@ -1,7 +1,8 @@
 <?php 
-$donated =  $_REQUEST['donation'];
-$raised = rand(0, $target );
-//$raised = 0;
-	$send =  ['status'=> 'OK' , 'raised' => $donated];
-	echo json_encode($send);
+$donation = 0;
+if (isset($_REQUEST['donation'])){
+	$donation =  $_REQUEST['donation'];
+}
+$send =  ['status'=> 'OK' , 'donation' => $donation];
+echo json_encode($send);
 ?>

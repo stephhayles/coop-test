@@ -32,33 +32,39 @@ var app = new Vue({
 	        	return 0;
 	        }
 	    },
-	    submit: function(event) {
+	    donate: function(event) {
             event.preventDefault();
             var self = this;
 
             // send get request
-            this.$http.get(window.location.hostname + '/donate.php', payload, function (data, status, request) {
+            $.ajax({
+            	type: "POST",
+	           	url: 'http://dev.coop.com/donate.php', 
+	           	data: $('form').serialize(),  
 
-	            // set data on vm
-	            this.response = data;
-	            if ( data.hasOwnProperty('status') && data.status=='OK' ){
-					if (data.hasOwnProperty('raised') && !isNaN(data.raised) ){
-						self.success = true;
+	           	success: function(response){
+
+		            // set data on vm
+		            var data = JSON.parse(response);
+		            if ( data.hasOwnProperty('status') && data.status=='OK' ){
+						
+					
+						if (self.hasOwnProperty('donation') && !isNaN(data.donation) ){
+							self.donation = data.donation;
+						}else{
+							self.donation = 0;
+						}
 					}else{
 						$('.alert-danger').removeClass('hide');
 					}
-					if (self.hasOwnProperty('donation') && !isNaN(data.donation) ){
-						self.donation = data.donation;
-					}else{
-						self.donation = 0;
-					}
-				}else{
-					$('.alert-danger').removeClass('hide');
-				}
+					$('#donation-success').fadeIn();
+					$('#donation').val('');
 
-            }).error(function (data, status, request) {
-                // handle error
-            });
+	            },
+	            error: function (data, status, request) {
+	                $('.alert-danger').removeClass('hide');
+	            }
+	        });
         }
 	},
 	mounted() {
