@@ -1,0 +1,81 @@
+<html>
+    <head>
+    	<meta charset="utf-8">
+		<title>Steph - Coop Test</title>
+		<meta name="title" content="Demo">
+		<meta name="description" content="Stephanie Hayles test for Coop.">
+		<meta name="keywords" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="https://www.coop.co.uk/assets/favicon.ico" type="image/x-icon">
+    	<link rel="stylesheet" href="/fonts/fonts.css">
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="/css/bootstrap.min.css"> 
+        <!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>       
+        
+        <script  src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+        <script  src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+        <!-- Latest compiled and minified CSS -->
+
+
+		
+
+		<!-- Latest compiled JavaScript -->
+		<script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="container">
+        	<div class="table-display">
+        		<div class="cell" id="app">
+		        	<h1>Help refugees rebuild their lives and communities in Manchester</h1>
+		        	<h2>Manchester Refugee Support Network (MRSN)</h2>
+		        	<div class="alert alert-danger hide">Unable to retrieve the data, please try again later</div>
+		        	<div class="alert donation-success alert-success hide">Thank you for your generous gift to MRSN. We are thrilled to have your support.</div>
+		        	<div class="progress">
+		        		
+					  	<div class="progress-bar progress-bar-success" v-bind:style="{ width: getPercentWidthStyle(raised, target) }" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+					</div>
+		        	<div class="row">
+		        		<div class="col-sm-7">
+		        			<h3>Raised so far</h3>
+		        			<div class="result" id="raised">
+					            <span class="pound">&pound;</span>{{ formatValue(raised, '0,0.00') }}
+					        </div>
+		        		</div>
+		        		<div class="col-sm-5">
+		        			<h3>Target</h3>
+		        			<div class="result" id="target">
+					            <span class="pound">&pound;</span>{{ formatValue(target, '0,0') }}
+					        </div>
+		        		</div>
+				        
+				    </div>
+				    <form>
+					    <label>Donate to the project</label>
+					    <div class="row">
+			        		<div class="col-sm-8">
+			        			<div class="form-group">
+			        				<input class="form-control" required  min=0.01 type="number"  class="donation" step="0.01" >
+			        				<span class="pound">&pound;</span>
+			        			</div>
+			        		</div>
+			        		<div class="col-sm-4">
+			        			<div class="form-actions">
+			        				<input type="hidden" name="success" value=1>
+			        				<button type="submit" class="btn btn-primary">Donate</button>
+
+			        			</div>
+			        		</div>
+					        
+					    </div>
+					 </form>
+			    </div>
+			    <div class="cell">
+		        	<p><a href="https://www.coop.co.uk/local-causes" target="_blank">Learn about causes local to you</a>
+			    </div>
+			</div>
+	    </div>
+        
+        <script src="index.js"></script>
+    </body>
+</html>

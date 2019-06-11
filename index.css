@@ -1,0 +1,106 @@
+html, body {
+    padding: 0;
+    font-family: AvenirNextLT,"Helvetica LT",Helvetica,"Lucida Grande",Arial,sans-serif;
+}
+
+.table-display{
+	border: 2px solid #dcdcdc;
+	max-width:513px;
+	background-color: #fafafa;
+	margin:50px auto;
+	font-family: AvenirNextLT,"Helvetica LT",Helvetica,"Lucida Grande",Arial,sans-serif;
+}
+.table-display .cell:not(last-child){
+	border-bottom: 2px solid #dcdcdc;
+	padding:30px  40px 40px;
+}
+.table-display .cell:last-child{
+	border-bottom: 2px solid #dcdcdc;
+	padding:13px  40px 18px;
+}
+.table-display h1, .table-display h2, .table-display h3, .table-display p{
+	margin: 8px 0;
+	line-height: 1.6;
+}
+.table-display h1{
+	font-size:27px;
+	font-family: AvenirNextDemi,"Helvetica LT",Helvetica,"Lucida Grande",Arial,sans-serif;	
+}
+.table-display h2{
+	font-size:27px;
+	font-weight:lighter;
+}
+.table-display h3{
+	font-size:24px;
+	line-height: 1.6;
+	font-weight:lighter;
+	margin-bottom: 0;
+}
+.table-display p{
+	font-size:22px;
+	font-weight:lighter;
+}
+.table-display p a{ 
+	color: #000;
+	text-decoration: underline;
+}
+.table-display p a:hover, .table-display p a:focus{ 
+	text-decoration: none;
+}
+.table-display .result{
+	font-size: 35px;
+	font-weight:bold;
+}
+
+
+
+.table-display .btn{
+	display:block;
+	float: none;
+	width:100%;
+	line-height: 3;
+}
+.table-display form{
+	margin:15px 0 -15px;
+}
+.table-display input.form-control{
+	height:80px;
+	line-height: 3;
+	padding: 6px 12px 6px 50px;
+
+}
+
+.table-display .form-group{
+	position: relative;
+	margin: 0 0 15px;
+	border:1px solid #9f9f9f;
+}
+
+.table-display .form-group .pound{
+	position: absolute;
+	top:0;
+	left:0;
+	font-weight: 600;
+	height:80px;
+	line-height: 3;
+	padding: 6px 0 6px 15px;
+}
+
+.table-display .progress{
+	margin: 35px 0 25px;
+	border: 2px solid #497b10;
+}
+.table-display .progress-bar{
+	line-height: 30px;
+	margin: 0;
+}
+@media (max-width: 768px){
+	.table-display .cell:not(last-child){
+		
+		padding:20px ;
+	}
+	.table-display .cell:last-child{
+		padding:13px  20px 18px;
+	}
+}
+
