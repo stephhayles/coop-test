@@ -30,7 +30,7 @@
 		        	<h1>Help refugees rebuild their lives and communities in Manchester</h1>
 		        	<h2>Manchester Refugee Support Network (MRSN)</h2>
 		        	<div class="alert alert-danger hide">Unable to retrieve the data, please try again later</div>
-		        	<div class="alert alert-success" style="display: none" id="donation-success">Thank you for your generous gift of £{{ donation }} to MRSN. We are thrilled to have your support.</div>
+		        	<div class="alert alert-success" style="display: none" id="donation-success">Thank you for your generous gift of £{{ formatValue(donation, '0,0.00') }} to MRSN. We are thrilled to have your support.</div>
 		        	<div class="progress">
 		        		
 					  	<div class="progress-bar progress-bar-success" v-bind:style="{ width: getPercentWidthStyle(raised, target) }" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
@@ -55,6 +55,7 @@
 					    <div class="row">
 			        		<div class="col-sm-8">
 			        			<div class="form-group">
+
 			        				<input class="donation form-control" id="donation" name="donation" required  min=0.01 type="number"  class="" step="0.01" >
 			        				<span class="pound">&pound;</span>
 			        			</div>

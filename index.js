@@ -40,7 +40,7 @@ var app = new Vue({
             $.ajax({
             	type: "POST",
 	           	url: 'http://dev.coop.com/donate.php', 
-	           	data: $('form').serialize(),  
+	           	data: $('form').serialize() + '&raised=' + self.raised,  
 
 	           	success: function(response){
 
@@ -53,6 +53,9 @@ var app = new Vue({
 							self.donation = data.donation;
 						}else{
 							self.donation = 0;
+						}
+						if (data.hasOwnProperty('raised') && !isNaN(data.raised) ){
+							self.raised = data.raised;
 						}
 					}else{
 						$('.alert-danger').removeClass('hide');
