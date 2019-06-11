@@ -30,7 +30,9 @@
 		        	<h1>Help refugees rebuild their lives and communities in Manchester</h1>
 		        	<h2>Manchester Refugee Support Network (MRSN)</h2>
 		        	<div class="alert alert-danger hide">Unable to retrieve the data, please try again later</div>
-		        	<div class="alert donation-success alert-success hide">Thank you for your generous gift to MRSN. We are thrilled to have your support.</div>
+		        	<div  v-bind:style="{ style: getDisplay(success) }">
+		        		<div class="alert donation-success alert-success">Thank you for your generous gift of £{{ donation }} to MRSN. We are thrilled to have your support.</div>
+		        	</div>
 		        	<div class="progress">
 		        		
 					  	<div class="progress-bar progress-bar-success" v-bind:style="{ width: getPercentWidthStyle(raised, target) }" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
@@ -42,7 +44,7 @@
 					            <span class="pound">&pound;</span>{{ formatValue(raised, '0,0.00') }}
 					        </div>
 		        		</div>
-		        		<div class="col-sm-5"> method"get"
+		        		<div class="col-sm-5">
 		        			<h3>Target</h3>
 		        			<div class="result" id="target">
 					            <span class="pound">&pound;</span>{{ formatValue(target, '0,0') }}
@@ -50,7 +52,7 @@
 		        		</div>
 				        
 				    </div>
-				    <form method="get">
+				    <form methog="get">
 					    <label>Donate to the project</label>
 					    <div class="row">
 			        		<div class="col-sm-8">
@@ -68,8 +70,8 @@
 			        		</div>
 					        
 					    </div>
-					 </form>
-			    </div>
+					</form>		    
+				</div>
 			    <div class="cell">
 		        	<p><a href="https://www.coop.co.uk/local-causes" target="_blank">Learn about causes local to you</a>
 			    </div>
