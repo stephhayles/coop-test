@@ -42,7 +42,7 @@
 					            <span class="pound">&pound;</span>{{ formatValue(raised, '0,0.00') }}
 					        </div>
 		        		</div>
-		        		<div class="col-sm-5">
+		        		<div class="col-sm-5"> method"get"
 		        			<h3>Target</h3>
 		        			<div class="result" id="target">
 					            <span class="pound">&pound;</span>{{ formatValue(target, '0,0') }}
@@ -50,12 +50,12 @@
 		        		</div>
 				        
 				    </div>
-				    <form>
+				    <form method="get">
 					    <label>Donate to the project</label>
 					    <div class="row">
 			        		<div class="col-sm-8">
 			        			<div class="form-group">
-			        				<input class="form-control" required  min=0.01 type="number"  class="donation" step="0.01" >
+			        				<input class="donation form-control" id="donation" name="donation" required  min=0.01 type="number"  class="" step="0.01" >
 			        				<span class="pound">&pound;</span>
 			        			</div>
 			        		</div>
